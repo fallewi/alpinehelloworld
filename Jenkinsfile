@@ -8,7 +8,7 @@ pipeline
 	}
 	agent none
 	stages{
-		stage ('build le conteeur'){
+		stage ('build le conteneur'){
 					agent any
 					steps{
 							script{			
@@ -20,18 +20,7 @@ pipeline
 								}
 						}
 				}
-			       	stage ('build le conteeur'){
-					agent any
-					steps{
-							script{			
-							sh    """
-									git clone  https://github.com/fallewi/alpinehelloworld.git
-									cd alpinehelloworld/
-									docker build -t  ${IMAGE_NAME}:${IMAGE_TAG} .
-					              """
-								}
-						}
-				}
+			   
 					 	stage ('lance le conteneur'){
 					agent any
 					steps{
