@@ -12,7 +12,8 @@ pipeline
 					agent any
 					steps{
 							script{			
-							sh    """
+							sh    """     
+							                rm -Rf alpinehelloworld
 									git clone  https://github.com/fallewi/alpinehelloworld.git
 									cd alpinehelloworld/
 									docker build -t  ${IMAGE_NAME}:${IMAGE_TAG} .
