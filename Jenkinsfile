@@ -44,5 +44,17 @@ pipeline
 								}
 						}
 				}
+					stage ('suppression du conteneur'){
+					agent any
+					steps{
+							script{			
+							sh    """
+								docker stop hello
+								docker rm hello
+								
+					              """
+								}
+						}
+				}
 		}
 }
